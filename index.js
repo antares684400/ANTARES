@@ -1,8 +1,8 @@
+process.exit();
 const discord = require('discord.js');
 const ytdl = require('ytdl-core');
 const fs = require('fs');
 const client = new discord.Client();
-var token = process.env.Discord_token
 const token = "MON TOKEN";
 
 //Lancement du bot
