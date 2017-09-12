@@ -4,96 +4,93 @@ const fs = require('fs');
 const client = new discord.Client();
 const token = "MON TOKEN";
 
-
 //Lancement du bot
 client.on('ready', () => {
     var servers = client.guilds.array().map(g => g.name).join('.');
-    console.log("========================\n[!]ANTARES DISPO");
-    client.user.setGame("𝓐𝓝𝓣𝓐𝓡𝓔𝓢")
+    console.log("========================\n[!]Je fonctionne");
+    client.guilds.size
     });
 
-    client.on('message', message =>{
-    //votre code ici ! 
-    if(message.content.startsWith('1')){
-        message.channel.send('PARTIT');
+client.on('message', message =>{
+    if(message.content=='1'){
+        message.channel.send('PARTI' + message.guild.roles.find('name','CTA/CODIS').toString());
     }
-
-    if(message.content.startsWith('2*')){
-        message.channel.send('SUR LES LIEUX');
-    }
-    if(message.content.startsWith('3*')){
-      message.channel.send('MESSAGE')
-    };
     
-    if(message.content.startsWith('4*')){
-      message.channel.send('MESSAGE URGENT')
-    };
+    if(message.content=='2'){
+        message.channel.send('Sur Les Lieux' + message.guild.roles.find('name','CTA/CODIS').toString());
+    }
+    
+    if(message.content=='3'){
+        message.channel.send('MESSAGE'+ message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if (message.content.startsWith('5')){
-      message.channel.send('DEPART=>HOPITAL')
-    };
+    if(message.content=='4'){
+        message.channel.send('MESSAGE URGENT'+ message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('6')){
-      message.channel.send('ARRIVEE HOPITAL')
-    };
+    if(message.content=='5'){
+        message.channel.send('TRANSP. HOPITAL'+ message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('7')){
-      message.channel.send('DISPONIBLE')
-    };
+    if(message.content=='6'){
+        message.channel.send('ARRIVEE HOPITAL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('8')){
-      message.channel.send('INDISPONIBLE')
-    };
+    if(message.content=='7'){
+        message.channel.send('DISPONIBLE ET RENTRE'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('9')){
-      message.channel.send('RENTRE')
-    };
+    if(message.content=='8'){
+        message.channel.send('INDISPONIBLE'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('22')){
-      message.channel.send('SMUR SLL')
-    };
+    if(message.content=='9'){
+        message.channel.send('RENTRE'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('30')){
-      message.channel.send('POLICE SLL')
-    };
+    if(message.content=='22'){
+        message.channel.send('SMUR SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('31')){
-      message.channel.send('GENDARMERIE SLL')
-    };
+    if(message.content=='30'){
+        message.channel.send('POLICE SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('32')){
-      message.channel.send('EDF SLL')
-    };
+    if(message.content=='31'){
+        message.channel.send('GENDARMERIE SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('33')){
-      message.channel.send('GDF SLL')
-    };
+    if(message.content=='32'){
+        message.channel.send('EDF SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('34')){
-      message.channel.send('DDE SLL')
-    };
+    if(message.content=='33'){
+        message.channel.send('GDF SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('35')){
-      message.channel.send('CONSEIL GENERAL SLL')
-    };
+    if(message.content=='34'){
+        message.channel.send('DDE SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('36')){
-      message.channel.send('POLICE MUNL SLL')
-    };
+    if(message.content=='35'){
+        message.channel.send('CONSEIL GENERAL SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('37')){
-      message.channel.send('BRIG. VERTE SLL')
-    };
+    if(message.content=='36'){
+        message.channel.send('POLICE MUNICIPALE SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('38')){
-      message.channel.send('MAIRE SLL')
-    };
+    if(message.content=='37'){
+        message.channel.send('BRIG. VERTES SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
 
-    if(message.content.startsWith('44')){
-      message.channel.send('DISPONIBLE SLL')
-    };
-    if(message.content.startsWith('indicatif')){
-      message.channel.send('```CODIS 68 : Département du Haut-Rhin//LANCELOT 68 : Directeur Départemental des Services d’Incendie et de Secours(DDSIS)//MERLIN 68 : Officier de garde départemental(OGADEP)// GARETH (suivi du nom du groupement) : Chef de groupement//MERLIN (+ nom de la commune) : Chef de Centre; CSP; CS ou CPI//HIPPOCRATE 68 : Médecin chef du département//ARAMIS 68 : Préfet du Haut-Rhin//PORTHOS 68 : Directeur du cabinet du Préfet```')
-    };
+    if(message.content=='38'){
+        message.channel.send('MAIRE SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
+
+    if(message.content=='44'){
+        message.channel.send('DISPONIBLE SLL'+message.guild.roles.find('name','CTA/CODIS').toString());
+    }
+
 });
 client.login(token);
